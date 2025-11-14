@@ -9,7 +9,16 @@
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="org.jetbrains.plugins.template.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-        <postStartupActivity implementation="org.jetbrains.plugins.template.startup.MyProjectActivity" />
+        <inline.completion.provider
+            implementation="com.example.aicompletion.completion.GeminiInlineCompletionProvider"
+            order="first"
+        />
+        <toolWindow
+            factoryClass="org.jetbrains.plugins.template.toolWindow.MyToolWindowFactory"
+            id="MyToolWindow"
+        />
+        <postStartupActivity
+            implementation="org.jetbrains.plugins.template.startup.MyProjectActivity"
+        />
     </extensions>
 </idea-plugin>
